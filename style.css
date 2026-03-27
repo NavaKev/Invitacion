@@ -1,0 +1,424 @@
+:root {
+    --rosa-fuerte: #D08787; /* Letras */
+    --rosa-fondo: #ebd8d8;  /* Fondo */
+    --texto: #000000;       
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--rosa-fondo);
+    color: var(--texto);
+}
+
+/* Bloquea el scroll */
+.no-scroll {
+    overflow: hidden; 
+}
+
+/* --- ESTILOS DEL SOBRE --- */
+.envelope-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--rosa-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+    
+    /*Transición suave de 1 segundo */
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease-in-out;
+}
+
+.envelope-content {
+    text-align: center;
+}
+
+.envelope-icon {
+    width: 80vw; /* Ocupa el 80% del ancho del viewport */
+    max-width: 350px; /* Máximo 350px para que no sea excesivamente grande en pantallas anchas */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 60vh; /* Máximo 60% de la altura del viewport */
+    object-fit: contain; /* Asegura que la imagen completa sea visible */
+    display: block; /* Para poder centrarla con margin auto */
+    margin: 0 auto 20px auto; /* Centra horizontalmente y añade margen inferior */
+    /* Animación infinita para que el sobre "flote" */
+    animation: flotar 3s ease-in-out infinite;
+    opacity: 0.4; /* Hace la imagen semi-transparente para que el texto resalte */
+}
+
+.envelope-content h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: var(--rosa-fuerte);
+    margin: 10px 0 30px 0;
+}
+
+.btn-abrir {
+    background-color: var(--rosa-fuerte);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 15px rgba(212, 165, 165, 0.4);
+    transition: transform 0.3s;
+}
+
+.btn-abrir:hover {
+    transform: scale(1.05);
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* --- CLASE PARA CUANDO SE ABRE EL SOBRE --- */
+.envelope-overlay.open {
+    transform: translateY(-100vh); /* Desliza toda la pantalla hacia arriba */
+    opacity: 0;
+}
+
+/* --- ESTILOS GENERALES DE SECCIONES --- */
+.section-padding {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: var(--rosa-fuerte);
+    margin-bottom: 40px;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    /* Reemplaza con tu imagen de fondo. La imagen debe ser de buena calidad. */
+    background-image: url('Imagenes/Inicio.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* <-- ESTA ES LA CLAVE PARA EL EFECTO */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: white; /* Texto blanco para contrastar con la imagen */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* --- NUESTRA BODA SECTION (formerly Nuestra Historia) --- */
+.wedding-date-display {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--rosa-fuerte);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.invitation-message {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: var(--texto);
+}
+
+/* --- Music Player --- */
+.music-player-container {
+    margin: 40px 0;
+}
+
+.music-invitation {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--texto);
+    margin-bottom: 20px;
+}
+
+.play-pause-btn {
+    background-color: var(--rosa-fuerte);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem; /* Ajustado para los íconos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px auto; /* Centrado y con margen inferior */
+    box-shadow: 0 4px 15px rgba(212, 165, 165, 0.4);
+    transition: transform 0.3s;
+}
+
+.play-pause-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Countdown */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.countdown div {
+    background-color: rgba(208, 135, 135, 0.2); /* Usando --rosa-fuerte con opacidad */
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    min-width: 80px;
+    color: var(--texto);
+}
+
+.countdown div span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+/* --- GALERÍA DE FOTOS SECTION --- */
+.gallery-swiper {
+    width: 100%;
+    max-width: 450px; /* Ancho máximo del carrusel */
+    height: 550px; /* Altura del carrusel */
+    margin-top: 40px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Bordes redondeados para las fotos */
+}
+
+/* Personalización de flechas y paginación de Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--rosa-fuerte) !important; /* Color de las flechas */
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--rosa-fuerte) !important; /* Color del punto activo */
+}
+
+/* --- DETALLES DEL EVENTO SECTION --- */
+.event-cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.event-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    flex: 1; /* Permite que las tarjetas crezcan */
+    min-width: 280px; /* Ancho mínimo para las tarjetas */
+    max-width: 400px;
+}
+
+.event-card h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: var(--rosa-fuerte);
+    margin-bottom: 15px;
+}
+
+.event-card p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.btn-small {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+/* --- ITINERARIO SECTION --- */
+.itinerary-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.itinerary-image-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.itinerary-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.itinerary-details {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    text-align: left;
+}
+
+.itinerary-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+.itinerary-item:last-child {
+    margin-bottom: 0;
+}
+
+.itinerary-icon {
+    font-size: 2.5rem;
+    color: var(--rosa-fuerte);
+    flex-shrink: 0;
+}
+
+.item-text {
+    flex-grow: 1;
+}
+
+.item-time {
+    font-weight: 600;
+    color: var(--rosa-fuerte);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.item-description {
+    margin: 5px 0 0 0;
+    font-size: 1rem;
+    color: var(--texto);
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    background-color: var(--rosa-fuerte);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+.main-footer .social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: text-decoration 0.3s ease;
+}
+
+.main-footer .social-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- MEDIA QUERIES para Responsividad --- */
+@media (max-width: 768px) {
+    .hero-names {
+        font-size: 3.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .wedding-date-display {
+        font-size: 1.2rem;
+    }
+
+    .invitation-message {
+        font-size: 1rem;
+    }
+
+    .countdown div {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+        min-width: 60px;
+    }
+
+    .event-cards-container {
+        flex-direction: column; /* Apila las tarjetas en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .event-card {
+        width: 90%; /* Ocupa casi todo el ancho disponible */
+        max-width: 350px;
+    }
+
+    .itinerary-content-wrapper {
+        flex-direction: column;
+    }
+
+
+}
