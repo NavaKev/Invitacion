@@ -92,9 +92,6 @@ body::after {
     position: fixed;
     width: 700px; /* Ancho de la decoración, ajústalo si es necesario */
     height: 150px; /* Alto de la decoración, ajústalo si es necesario */
-    /* --- IMPORTANTE --- */
-    /* Reemplaza la URL con tu imagen. Te recomiendo una esquina floral */
-    /* con fondo transparente (PNG) guardada en tu carpeta 'Imagenes'. */
     background-image: url('Imagenes/Contorno.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -111,7 +108,7 @@ body::before {
 body::after {
     bottom: 15px;
     right: 15px;
-    transform: rotate(180deg); /* Rota la imagen para la esquina opuesta */
+    transform: rotate(180deg);
 }
 
 /* --- ESTILOS GENERALES DE SECCIONES --- */
@@ -132,8 +129,7 @@ body::after {
 /* --- HERO SECTION --- */
 .hero-section {
     position: relative;
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
-    /* Reemplaza con tu imagen de fondo. La imagen debe ser de buena calidad. */
+    height: 100vh;
     background-image: url('Imagenes/Inicio.png');
     background-size: cover;
     background-position: center;
@@ -141,36 +137,43 @@ body::after {
     display: flex;
     justify-content: center;
     align-items: center; 
-    color: white; /* Texto blanco para contrastar con la imagen */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
+    color: rgb(0, 0, 0); 
+    text-shadow: 4px 4px 4px rgba(255, 255, 255, 0.7);
 }
 
 .hero-content {
     text-align: center;
 }
 
+.hero-rings-icon {
+    width: 400px; /* Ajusta el tamaño según tu imagen */
+    height: auto;
+    margin-bottom: -150px; /* Espacio entre los anillos y los nombres */
+    filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 0.3)); /* Sombra suave para que resalte */
+}
+
 .hero-names {
     font-family: 'Great Vibes', cursive;
     font-size: 5rem;
     margin-bottom: 10px;
-    line-height: 1;
+    line-height: 2;
 }
 
 .hero-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 500;
     margin: 10px 0;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
 }
 
 .hero-text {
     font-size: 1.1rem;
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto 0 auto;
     line-height: 1.7;
-    font-weight: 300;
+    font-weight: 1000;
 }
 
 /* --- NUESTRA BODA SECTION (formerly Nuestra Historia) --- */
@@ -452,11 +455,5 @@ body::after {
 
     .itinerary-content-wrapper {
         flex-direction: column;
-    }
-
-    /* Oculta las decoraciones en pantallas pequeñas para no saturar */
-    body::before,
-    body::after {
-        display: none;
     }
 }
