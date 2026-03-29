@@ -114,10 +114,17 @@ document.addEventListener("DOMContentLoaded", function() {
             modifier: 1,
             slideShadows: true,
         },
+        
         // Paginación
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
+        },
+
+        // Navegación con flechas
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
     });
 });

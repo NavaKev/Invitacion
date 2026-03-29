@@ -85,6 +85,35 @@ body {
     opacity: 0;
 }
 
+/* --- DECORACIONES DE ESQUINAS --- */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    width: 700px; /* Ancho de la decoración, ajústalo si es necesario */
+    height: 150px; /* Alto de la decoración, ajústalo si es necesario */
+    /* --- IMPORTANTE --- */
+    /* Reemplaza la URL con tu imagen. Te recomiendo una esquina floral */
+    /* con fondo transparente (PNG) guardada en tu carpeta 'Imagenes'. */
+    background-image: url('Imagenes/Contorno.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 9990; /* Un z-index alto para asegurar que esté por encima de todo el contenido */
+    pointer-events: none; /* Para que no interfiera con los clics */
+    opacity: 0.6; /* Opacidad para que no sea tan dominante */
+}
+
+body::before {
+    top: 15px;
+    left: 15px;
+}
+
+body::after {
+    bottom: 15px;
+    right: 15px;
+    transform: rotate(180deg); /* Rota la imagen para la esquina opuesta */
+}
+
 /* --- ESTILOS GENERALES DE SECCIONES --- */
 .section-padding {
     padding: 60px 20px;
@@ -420,5 +449,9 @@ body {
         flex-direction: column;
     }
 
-
+    /* Oculta las decoraciones en pantallas pequeñas para no saturar */
+    body::before,
+    body::after {
+        display: none;
+    }
 }
