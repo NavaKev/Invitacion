@@ -107,7 +107,7 @@ body {
     background-image: url('Imagenes/Inicio.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* <-- ESTA ES LA CLAVE PARA EL EFECTO */
+    background-attachment: fixed; 
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -210,7 +210,7 @@ body {
 }
 
 .countdown div {
-    background-color: rgba(208, 135, 135, 0.2); /* Usando --rosa-fuerte con opacidad */
+    background-color: rgba(208, 135, 135, 0.2);
     padding: 15px 20px;
     border-radius: 10px;
     font-size: 1.5rem;
@@ -268,13 +268,13 @@ body {
 }
 
 .event-card {
-    background-color: white;
-    padding: 30px;
+    background-color: rgb(255, 223, 223);
+    padding: 70px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     flex: 1; /* Permite que las tarjetas crezcan */
     min-width: 280px; /* Ancho mínimo para las tarjetas */
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .event-card h3 {
@@ -285,14 +285,14 @@ body {
 }
 
 .event-card p {
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     font-size: 1rem;
 }
 
 .btn-small {
-    padding: 10px 20px;
+    padding: 20px 40px;
     font-size: 0.9rem;
-    margin-top: 15px;
+    margin-top: 1500px; 
 }
 
 /* --- ITINERARIO SECTION --- */
@@ -328,7 +328,7 @@ body {
 .itinerary-item {
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     gap: 20px;
 }
 
@@ -357,6 +357,21 @@ body {
     margin: 5px 0 0 0;
     font-size: 1rem;
     color: var(--texto);
+}
+
+/* --- CONFIRMACIÓN DE ASISTENCIA SECTION --- */
+.rsvp-section .btn-abrir {
+    display: inline-block; 
+    margin-top: 30px; 
+}
+
+/* --- MESA DE REGALOS SECTION --- */
+.gift-buttons-container {
+    margin-top: 30px; 
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    flex-wrap: wrap; 
 }
 
 /* --- FOOTER --- */
@@ -395,7 +410,6 @@ body {
     }
 
     .hero-section {
-        /* Desactiva el efecto parallax en móviles para evitar problemas de zoom y rendimiento */
         background-attachment: scroll;
     }
 
