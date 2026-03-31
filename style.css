@@ -120,10 +120,11 @@ body {
 }
 
 .hero-rings-icon {
-    width: 400px; /* Ajusta el tamaño según tu imagen */
+    width: 350px;
     height: auto;
-    margin-bottom: -150px; /* Espacio entre los anillos y los nombres */
+    margin-bottom: -120px;
     filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 0.3)); /* Sombra suave para que resalte */
+    max-width: 80%;
 }
 
 .hero-names {
@@ -290,9 +291,9 @@ body {
 }
 
 .btn-small {
-    padding: 20px 40px;
+    padding: 12px 25px;
     font-size: 0.9rem;
-    margin-top: 1500px; 
+    margin-top: 20px; 
 }
 
 /* --- ITINERARIO SECTION --- */
@@ -396,6 +397,15 @@ body {
 
 /* --- MEDIA QUERIES para Responsividad --- */
 @media (max-width: 768px) {
+    .envelope-content h2 {
+        font-size: 3rem;
+    }
+
+    .hero-rings-icon {
+        width: 280px;
+        margin-bottom: -90px;
+    }
+
     .hero-names {
         font-size: 3.5rem;
     }
@@ -413,6 +423,10 @@ body {
         background-attachment: scroll;
     }
 
+    .section-padding {
+        padding: 40px 20px;
+    }
+
     .section-title {
         font-size: 2.5rem;
     }
@@ -423,6 +437,10 @@ body {
 
     .invitation-message {
         font-size: 1rem;
+    }
+
+    .countdown {
+        gap: 10px;
     }
 
     .countdown div {
@@ -438,10 +456,40 @@ body {
 
     .event-card {
         width: 90%; /* Ocupa casi todo el ancho disponible */
-        max-width: 350px;
+        max-width: 400px;
+        padding: 40px 25px;
     }
 
     .itinerary-content-wrapper {
         flex-direction: column;
+    }
+
+    .itinerary-details {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .envelope-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-rings-icon {
+        width: 220px;
+        margin-bottom: -70px;
+    }
+
+    .hero-names {
+        font-size: 2.8rem;
+        line-height: 1.8;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .gallery-swiper {
+        height: 450px;
     }
 }
