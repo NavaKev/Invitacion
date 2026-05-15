@@ -15,6 +15,17 @@ document.addEventListener("DOMContentLoaded", function() {
             // Eliminamos el listener para que no se ejecute múltiples veces
             envelope.removeEventListener('transitionend', handler);
         });
+
+        // Reproducir la música al abrir el sobre
+        const weddingSong = document.getElementById('wedding-song');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        if (weddingSong && playPauseBtn && weddingSong.paused) {
+            weddingSong.play();
+            const playIcon = playPauseBtn.querySelector('.play-icon');
+            const pauseIcon = playPauseBtn.querySelector('.pause-icon');
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'inline';
+        }
         
     });
 
