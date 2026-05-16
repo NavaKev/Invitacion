@@ -390,6 +390,33 @@ body {
     margin-bottom: 30px;
 }
 
+/* --- CÓDIGO DE VESTIMENTA SECTION --- */
+.dress-code-section p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.dress-code-type {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--rosa-fuerte);
+    margin-bottom: 30px !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.dress-code-image {
+    max-width: 350px; /* Ajusta el tamaño máximo según tu imagen */
+    width: 100%;
+    height: auto;
+    margin: 30px auto 20px auto;
+    display: block;
+    border-radius: 10px; /* Opcional: para redondear las esquinas */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
 /* --- FOOTER --- */
 .main-footer {
     background-color: var(--rosa-fuerte);
